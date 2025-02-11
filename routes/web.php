@@ -8,6 +8,14 @@ use Inertia\Inertia;
 
 Route::resource('games',GameController::class);
 
+Route::get('/movies', function(){
+    return Inertia::render('Movies/Index');
+});
+
+Route::get('/songs', function(){
+    return Inertia::render('Songs/Index');
+});
+
 Route::get('/', function () {
     return Inertia::render('Welcome', [
         'canLogin' => Route::has('login'),

@@ -13,6 +13,9 @@ return new class extends Migration
     {
         Schema::create('movies', function (Blueprint $table) {
             $table->id();
+            $table->string('Tittle');
+            $table->string('Genre');
+            $table->string('Classification');
             $table->timestamps();
         });
     }
