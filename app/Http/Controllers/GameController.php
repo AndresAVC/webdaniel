@@ -23,7 +23,8 @@ class GameController extends Controller
      */
     public function create()
     {
-        //
+        
+        return inertia::render('Games/create');
     }
 
     /**
@@ -31,7 +32,17 @@ class GameController extends Controller
      */
     public function store(Request $request)
     {
-        //
+
+        $request -> validate([
+            'price' => ['numeric', 'required']
+        ]);
+
+
+        Games::create($request -> all());
+        return response() -> json([
+            'message' => 'Datos guardados'
+        ]);
+        // dd($request->all());
     }
 
     /**

@@ -6,7 +6,7 @@ use Illuminate\Foundation\Application;
 use Illuminate\Support\Facades\Route;
 use Inertia\Inertia;
 
-Route::resource('games',GameController::class);
+Route::resource('games',GameController::class); 
 
 Route::get('/movies', function(){
     return Inertia::render('Movies/Index');
@@ -15,6 +15,8 @@ Route::get('/movies', function(){
 Route::get('/songs', function(){
     return Inertia::render('Songs/Index');
 });
+
+
 
 Route::get('/', function () {
     return Inertia::render('Welcome', [
